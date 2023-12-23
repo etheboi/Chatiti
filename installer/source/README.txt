@@ -1,0 +1,12 @@
+-- Chatiti Onl V1.0.0 --
+
+What is Chatiti Onl?
+Chatiti is a simple messaging app where users
+can learn to code there own servers to chat
+with their friends!
+
+How do I make my own server?
+You can really easily do! All you have to do is download the server maker addon at [server maker addon link]
+
+What are the requirements of Chatiti?
+Chatiti requires Python 3.9 or higher and a couple of python installations: colorama and pyinstaller
