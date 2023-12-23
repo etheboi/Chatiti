@@ -1,1 +1,0 @@
-python Chatiti-Installer.py
