@@ -31,3 +31,7 @@ body {
 .nav-servermaker-button {
     position: relative; top: -48px; left: 318px;
 }
+
+.header-sub-text {
+    text-align: center;
+}
