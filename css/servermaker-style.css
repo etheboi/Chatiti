@@ -35,3 +35,7 @@ body {
 .header-sub-text {
     text-align: center;
 }
+
+.main-p {
+    position: relative; left: 25px;
+}
