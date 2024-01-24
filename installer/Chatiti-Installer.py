@@ -1,15 +1,13 @@
-import glob
 from tkinter import *
 from tkinter import ttk
 import os
 from time import sleep
 import requests
-import subprocess
 
-global file_location
-file_location = "C:/Chatiti"
+global file___cpLocation
+file___cpLocation = "C:/Chatiti"
 
-#file location
+#file __cpLocation
 def installer_2_open():
     global installer_2
     installer_2 = Tk()
@@ -18,10 +16,10 @@ def installer_2_open():
     installer_2.geometry("500x300")
     install_info = Label(installer_2, text="WARNING\nWhen you install this, 2 packages will be installed:\ncolorama\npyinstaller").pack()
     Label(installer_2, text="\nFile Location:").pack()
-    global file_location_ent
-    file_location_ent = Entry(installer_2)
-    file_location_ent.insert(0, f"{file_location}")
-    file_location_ent.pack()
+    global file___cpLocation_ent
+    file___cpLocation_ent = Entry(installer_2)
+    file___cpLocation_ent.insert(0, f"{file___cpLocation}")
+    file___cpLocation_ent.pack()
     Button(installer_2, text="Download", command=create_files).pack()
     installer_2.mainloop()
 
@@ -29,28 +27,25 @@ def installer_2_open():
 #generate files
 def create_files():
     installer_2.destroy
-    subprocess.run(["pip", "install", "colorama"])
-    subprocess.run(["pip", "install", "pyinstaller"])
-    if os.path.exists(file_location):
+    if os.path.exists(file___cpLocation):
         url = "https://chatiti.netlify.app/raw/chatiti"
         r = requests.get(url, allow_redirects=True)
-        open(f'{file_location}/Chatiti.py', 'wb').write(r.content)
+        open(f'{file___cpLocation}/Chatiti.py', 'wb').write(r.content)
 
         url = "https://chatiti.netlify.app/raw/readme"
         r = requests.get(url, allow_redirects=True)
-        open(f'{file_location}/README.txt', 'wb').write(r.content)
+        open(f'{file___cpLocation}/README.txt', 'wb').write(r.content)
     else:
-        os.mkdir(file_location)
+        os.mkdir(file___cpLocation)
         url = "https://chatiti.netlify.app/raw/chatiti"
         r = requests.get(url, allow_redirects=True)
-        open(f'{file_location}/Chatiti.py', 'wb').write(r.content)
+        open(f'{file___cpLocation}/Chatiti.py', 'wb').write(r.content)
 
         url = "https://chatiti.netlify.app/raw/readme"
         r = requests.get(url, allow_redirects=True)
-        open(f'{file_location}/README.txt', 'wb').write(r.content)
+        open(f'{file___cpLocation}/README.txt', 'wb').write(r.content)
 
-    os.chdir(file_location)
-    subprocess.run([f"pyinstaller", "./Chatiti.py", "--onefile"])
+    os.chdir(file___cpLocation)
 
 
 #main-installer
